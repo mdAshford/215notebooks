@@ -145,7 +145,6 @@ textarea {
 
 
 
-
 .neuebody {
 	width: 100vw;
 	overflow-x: hidden;
@@ -485,7 +484,10 @@ li:focus {
   opacity: 1;
 }
 
-
+/*i hate underlined multiline links*/
+a {
+	text-decoration: none;
+}
 
 
 
@@ -613,10 +615,12 @@ li:focus {
     box-shadow: none !important;
     text-shadow: none !important;
   }
+	
   a,
   a:visited {
-    text-decoration: underline;
-  }
+    /*text-decoration: underline;*/
+		text-decoration: none;
+	}
   a[href]:after {
     content: " (" attr(href) ")";
   }
