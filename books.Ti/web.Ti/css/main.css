@@ -1,0 +1,670 @@
+/*! HTML5 Boilerplate v7.3.0 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 2.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+@import url('../fonts/Ostrich-Sans/ostrich-sans.css');
+@import url("../fonts/Lato2OFLWeb/Lato/latofonts.css");
+
+
+:root {
+  --body-text-color: #1e1c22;
+  --body-text-color: 62, 58, 55;
+  /*--body-text-color: #444444;*/
+  /*--body-text-color: red;*/
+  --problem-row-badge-txt-color: #bfc3e1;		/* silver .  */
+  /* --problem-row-badge-txt-color: red;		silver .  */
+  /*--problem-row-badge-bg-color:  #000f89;		/* Tahiti Blue .  *!/*/
+  /*--problem-head-txt-color:        var(--problem-row-badge-txt-color);*/
+  /*--problem-head-bg-color:         var(--problem-row-badge-bg-color);*/
+  /*--problem-head-badge-txt-color:  var(--problem-row-badge-bg-color);*/
+  /*--problem-head-badge-bg-color:   var(--problem-row-badge-txt-color);*/
+  /*--problem-row-answer-txt-color:  var(--problem-row-badge-bg-color);*/
+  /*--problem-row-txt-color:         var(--problem-row-badge-bg-color);*/
+  /*--output—prompt-txt-color: 255,   0,  38;*/
+  --input—prompt-txt-color:  0,   0, 196;        
+  --code-cell-bkg-color:  #f7f7ff;
+  --code-cell-bkg-color:  250, 247, 245;
+	--cerulean: 41, 75, 173;
+  --tahitiblue: #000f89;		 
+  --funkbrightyorange: 255, 64, 0;
+  --coolassbrightblue: 0, 0, 196;
+  --killerbrightred: 255, 0, 38;
+	--bannerLRpadding: 0.5em;
+	--subtlegold: 252, 248, 227;
+	--royalpurple: 70, 29, 124;
+	--neonblue: 91, 62, 246;
+	--dash: green;
+	--cell: 200px;
+}
+
+
+
+
+
+
+
+
+
+html {
+  color: #222;
+	background: #fffefb;
+  font-size: 14px;
+  line-height: 1.4;
+	font: normal 1em/1.5em "LatoWebMedium", Arial, Helvetica, Geneva, sans-serif;
+	font-variant-numeric: oldstyle-nums;
+	
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+
+.neuebody {
+	width: 100vw;
+	overflow-x: hidden;
+	display: flex;
+	justify-content: center;
+	position: relative;
+}
+
+
+.container {
+	background: #f5f5f5 url('../images/bg.jpg') no-repeat left top;
+	/*border: 1px solid rgba(var(--killerbrightred), .75);*/
+	background: #fffefb;
+}
+
+/*.page {
+	margin: 100px;
+}*/
+
+.page {
+	width: 540px;
+	margin:	0 30;
+	/*border: 1px solid blue;*/
+}
+
+.math {
+	/*margin: 1em 5em;*/
+	/*padding: 1em;*/
+	border: 1px solid #0ff;
+	font-size: 75%;
+}
+
+/*.count-boxes,*/
+h2 {
+	color: rgba(var(--coolassbrightblue),1);
+	width: 100%;
+	padding: 0  0.5em 0  0.5em;
+	margin-left:  -0.5em; 
+	margin-right:  -0.5em; 
+	border-bottom: 1px dotted rgba(var(--coolassbrightblue),1);
+}
+
+h2::before {
+	content: counter(boxesbysection, decimal-leading-zero)" ⋮ ";
+}
+
+/*
+.flexbox::before {
+	content: "Section "counter(boxesbysection);
+	display: block;
+	clear:  both;
+}*/
+
+
+.flexbox:first-of-type {
+	counter-reset: boxes;	
+}
+
+.flex-item:first-of-type {
+	counter-reset: boxesbysection;
+}
+
+.flexbox:not(.flexbox:first-of-type),
+.flex-item {
+	counter-increment: boxesbysection;
+}
+
+/*.counted-box::after,*/
+.flex-item::after {
+	/*counter-increment: all;*/
+	content: counters(boxesbysection,".",decimal-leading-zero);
+	position: absolute;
+	top: -1.5em;
+	left: 6px;
+	font-family: LatoWeb;
+	color: rgba(var(--coolassbrightblue),1);;
+}
+
+.flex-item::before {
+	counter-increment: boxes;
+	content: counter(boxes);
+	position: absolute;
+	top: -22px;
+	right: 6px;
+	font: italic 80% 'LatoWebLight';
+	font-variant-numeric: oldstyle-nums;
+}
+
+.flexbox {
+	/*list-style: none;*/
+	display: flex;
+	/*flex: 1;*/
+	flex-flow: row wrap;
+	-webkit-flex-flow: wrap row;
+	justify-content: space-evenly;	
+}
+
+.flex-item {
+	width: 200px;
+	height: 200px;
+	background-color: rgb(214, 203, 194);
+	background-color: transparent;
+	margin: 20px;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+  align-items: center;
+	/*background-color: blue;*/
+	/*margin-left: auto;*/
+	color: rgba(var(--killerbrightred),1);
+	/*color: white;*/
+	font-family: 'LatoWebHairline' ;
+	font-family: 'Ostrich Sans Rounded';
+	/*font-variant-numeric: oldstyle-nums;*/
+	/*font: 900 9em sans-serif;*/
+	/*text-align: center;*/
+	/*padding: 10px;*/
+	border-radius: 6px;
+	/*overflow: hidden;*/
+	position: relative;
+	
+}
+
+.flex-item:empty {
+	border: 0.5px solid #ccc;
+}
+
+
+.flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+}
+
+h1 {
+  padding-left: .5em; 
+}
+
+.shorthand { 
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+
+.longhand { 
+  -webkit-flex-flow: wrap row;
+  flex-flow: wrap row;
+  
+}
+
+.longhand li {
+  background: deepskyblue;
+}
+
+.flex-items {
+  background: tomato;
+  padding: 5px;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  
+  line-height: 100px;
+  color: white;
+  font-weight: bold;
+  font-size: 2em;
+  text-align: center;
+}
+
+
+.tooltip {
+  position: relative;
+	/*right: 50%;*/
+	/*bottom: 50%;*/
+  display: block;  
+	width: 200px;
+	height: 100%;
+	width: var(--cell);
+	height: var(--cell);
+
+	
+  /*border-bottom: 1px dotted black;*/
+	/*border: 1px solid red;*/
+}
+
+.tooltip .tooltiptext {
+  /*visibility: hidden;*/
+  /*max-width: calc(2 * var(--cell));*/
+	/*overflow: hidden;*/
+	height: calc(100% - 2*5px);
+	width: calc(100% - 2*5px);
+  padding-left: var(--bannerLRpadding);
+  margin: 0 ;
+	line-height: 110%;
+	/*background-color: rgba(var(--subtlegold),1);*/
+  color: rgba(var(--body-text-color),1);
+	font-size: 0.8em;
+  /*text-align: justify;*/
+  border-radius: 6px;
+  position: relative;
+  z-index: 1;
+  /*bottom: calc(0.125 *var(--cell));*/
+  /*margin-left: calc(-0.5 * var(--cell));*/
+	font-family: 'LatoWebLight';
+	overflow-y: scroll;
+	overflow-x: hidden;
+	/*position: absolute;*/
+  
+  /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+  opacity: 0.0;
+  transition: opacity 1s;
+	/*display:  flex;*/
+}
+
+/*.tooltiptext p {
+	border: 1px solid #333;
+}*/
+
+.banner {
+	/*border: 1px solid #333;*/
+	/*display:  flex;*/
+	/*float: right;*/
+	/*flex: 1;*/
+	/*position: relative;*/
+	/*top: 0;*/
+	/*right: 0;*/
+	display: flex;
+	justify-content: space-between;																/*	push both elements to the periphery         */
+	align-items: flex-end;
+	padding: 0 var(--bannerLRpadding) 0 var(--bannerLRpadding);
+	width: var(--cell);
+	width: 100%;
+	margin-left: calc(-1.5 * var(--bannerLRpadding));
+	outline-bottom: 0.25em solid rgba(var(--subtlegold),1);;
+	background-color: rgba(var(--subtlegold),1);
+	/*color: rgba(var(	--royalpurple),1);*/
+	position: sticky;
+	position: -webkit-sticky;
+	top: 0;
+	/*padding-top: 0.5em;*/
+	overflow-x: hidden;
+	padding-bottom: 1px;
+	border-bottom: 1px dotted rgba(var(	--royalpurple),1);
+}
+
+
+
+.banner-text {
+	vertical-align: bottom;
+	float: left;
+	float: bottom;
+}
+
+.banner img {
+	width: 1.5em;
+	float: right;
+/*	position: sticky;
+	position: -webkit-sticky;
+	top: 0;
+	right: 0;*/
+}
+
+
+
+.img-wrap {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+	  /*z-index: 1;*/
+
+	
+  /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+  opacity: 01.0;
+  transition: opacity 1s;
+}
+
+div.img-wrap > img {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+	
+}
+
+div.img-wrap {
+  /*box-shadow: 0 0 1.5em #000;*/
+	border: 0;
+		border-radius: 6px;
+
+}
+
+li:hover:after {
+	content: 'hover';
+}
+
+li:focus {
+	background-color: blue;
+}
+
+
+.flex-item .img-wrap:empty + .tooltip .tooltiptext, 
+.flex-item:hover .tooltiptext {
+	  visibility: visible;
+  opacity: 1;
+}
+
+.flex-item:hover .img-wrap {
+  visibility: visible;
+  opacity: 0;
+}
+
+
+  /*touch*/
+.flex-item:active  .img-wrap {
+	/*background-color: blue;*/
+	visibility: visible;
+  opacity: 0;
+}
+
+ /*touch⋮ */
+.flex-item:active .tooltiptext {
+	/*background-color: blue;*/
+	visibility: visible;
+  opacity: 1;
+}
+
+/*i hate underlined multiline links*/
+a {
+	text-decoration: none;
+}
+
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden {
+  display: none !important;
+}
+
+/*
+* Hide only visually, but have it available for screen readers:
+* https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+*
+* 1. For long content, line feeds are not interpreted as spaces and small width
+*    causes content to wrap 1 word per line:
+*    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+*/
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+* Extends the .sr-only class to allow the element
+* to be focusable when navigated to via the keyboard:
+* https://www.drupal.org/node/897638
+*/
+
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+* Hide visually and from screen readers, but maintain layout
+*/
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+* Clearfix: contain floats
+*
+* For modern browsers
+* 1. The space content is one way to avoid an Opera bug when the
+*    `contenteditable` attribute is included anywhere else in the document.
+*    Otherwise it causes space to appear at the top and bottom of elements
+*    that receive the `clearfix` class.
+* 2. The use of `table` rather than `block` is only necessary if using
+*    `:before` to contain the top-margins of child elements.
+*/
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 600px) {
+  /* Style adjustments for viewports that meet the condition */
+
+	.page {
+		width: 90vw;
+		max-width: 1200px;
+		margin:	 5vw;
+		border: 1px solid red;
+	}
+
+}
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+	
+  a,
+  a:visited {
+    /*text-decoration: underline;*/
+		text-decoration: none;
+	}
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+  pre {
+    white-space: pre-wrap !important;
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  /*
+     * Printing Tables:
+     * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+  thead {
+    display: table-header-group;
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
